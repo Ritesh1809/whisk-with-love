@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whisk with Love | Homemade Goodness & Artisanal Bakery</title>
+  <meta name="description" content="Whisk with Love - Wholesome, homemade eggless muffins, decadent brownies, and tea cakes baked with mindful sweetness and healthy oils.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #c94a6e;
+      --primary-dark: #9e2a4a;
+      --primary-light: #fbebee;
+      --accent: #f7a8b8;
+      --text-dark: #3a2228;
+      --text-muted: #7d5e67;
+      --bg-cream: #faf5ee;
+      --card-bg: #ffffff;
+      --shadow: 0 10px 25px rgba(201, 74, 110, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 90px;
+    }
+
+    /* Header & Hero */
+    header {
+      background: linear-gradient(135deg, #fff0f3 0%, #fbe7ec 100%);
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+      border-bottom: 2px dashed #f1becb;
+      position: relative;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      background: #ffffff;
+      color: var(--primary);
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 12px rgba(201, 74, 110, 0.12);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .tagline-quote {
+      font-style: italic;
+      color: var(--primary);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    /* Trust Highlights */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      max-width: 900px;
+      margin: -25px auto 2.5rem;
+      padding: 0 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hl-badge {
+      background: #ffffff;
+      padding: 12px 14px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid #f6dbe2;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .hl-badge span {
+      font-size: 1.25rem;
+    }
+
+    /* Section & Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.85rem;
+      color: var(--primary-dark);
+      text-align: center;
+      margin: 2.5rem 0 1.5rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .section-title::before,
+    .section-title::after {
+      content: "";
+      height: 2px;
+      width: 45px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+      border: 1px solid #f7e6eb;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(201, 74, 110, 0.15);
+    }
+
+    .product-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .product-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .product-price {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .product-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .add-to-cart-btn {
+      width: 100%;
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1.5px solid var(--accent);
+      padding: 9px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .add-to-cart-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    /* Offer Banner */
+    .offer-banner {
+      background: linear-gradient(135deg, #ffeef2 0%, #fff6f8 100%);
+      border: 2px dashed #e898aa;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin: 3rem 0;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .offer-banner h3 {
+      color: var(--primary-dark);
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+    }
+
+    .offer-banner p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Floating Cart Bar */
+    .cart-floating-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.08);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      border-top: 1px solid #f1d4dd;
+      transition: transform 0.3s ease;
+    }
+
+    .cart-floating-bar.hidden {
+      transform: translateY(110%);
+    }
+
+    .cart-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-info .count {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .cart-info .total {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .checkout-btn {
+      background: #25D366;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    .checkout-btn:hover {
+      background: #20ba59;
+      transform: scale(1.02);
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      padding: 1rem;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #ffffff;
+      max-width: 500px;
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      animation: popIn 0.25s ease-out;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-header {
+      background: var(--primary-light);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #f6d1dc;
+    }
+
+    .modal-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: var(--primary-dark);
+    }
+
+    .close-btn {
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+      overflow-y: auto;
+    }
+
+    .offer-callout {
+      background: #fff6f8;
+      border: 1px solid #f6c8d3;
+      padding: 10px 14px;
+      border-radius: 10px;
+      margin-bottom: 1.25rem;
+      font-size: 0.88rem;
+      color: var(--primary-dark);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: var(--text-dark);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #e5d1d6;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .order-summary-box {
+      background: #fdfaf7;
+      border: 1px solid #eee1d8;
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 14px;
+      font-size: 0.9rem;
+    }
+
+    .order-summary-box ul {
+      list-style: none;
+      margin: 8px 0;
+    }
+
+    .order-summary-box li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .submit-order-btn {
+      width: 100%;
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    }
+
+    .submit-order-btn:hover {
+      background: #20ba59;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="badge-pill">Homemade Goodness • Previously Organika India</div>
+    <h1>Whisk with Love</h1>
+    <div class="subtitle">Artisanal Muffins, Fudgy Brownies & Tea Cakes</div>
+    <div class="tagline-quote">"Because every bite should be special ♥"</div>
+  </header>
+
+  <!-- Highlights Badges -->
+  <div class="highlights">
+    <div class="hl-badge"><span>🌱</span>100% Eggless</div>
+    <div class="hl-badge"><span>🌾</span>No Maida</div>
+    <div class="hl-badge"><span>🥑</span>Healthy Oils</div>
+    <div class="hl-badge"><span>🥣</span>Wholesome Ingredients</div>
+    <div class="hl-badge"><span>🎂</span>Customisable Orders</div>
+  </div>
+
+  <main class="container">
+    
+    <!-- Brownies Section -->
+    <h2 class="section-title">Brownie Range</h2>
+    <div class="products-grid" id="brownies-grid"></div>
+
+    <!-- Muffins Section -->
+    <h2 class="section-title">Muffin Flavours</h2>
+    <div class="products-grid" id="muffins-grid"></div>
+
+    <!-- Tea Cakes Section -->
+    <h2 class="section-title">Tea Cake Flavours</h2>
+    <div class="products-grid" id="teacakes-grid"></div>
+
+    <!-- Special Offers Callout -->
+    <div class="offer-banner">
+      <h3>✨ Special Milestone & Birthday Treats ✨</h3>
+      <p>Share your mobile number and date of birth at checkout to receive exciting customized birthday surprises, anniversary discounts, and exclusive seasonal offers!</p>
+    </div>
+
+  </main>
+
+  <!-- Floating Cart Bar -->
+  <div class="cart-floating-bar hidden" id="cartBar">
+    <div class="cart-info">
+      <div class="count" id="cartCount">0 items selected</div>
+      <div class="total" id="cartTotal">₹0</div>
+    </div>
+    <button class="checkout-btn" onclick="openCheckoutModal()">
+      <span>Continue to Order</span> ➔
+    </button>
+  </div>
+
+  <!-- Checkout & Customer Intake Modal -->
+  <div class="modal-backdrop" id="checkoutModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2>Complete Your Order</h2>
+        <button class="close-btn" onclick="closeCheckoutModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="offer-callout">
+          🎁 <span><strong>Special Perk:</strong> Need mobile number & DOB for exciting customised offers!</span>
+        </div>
+
+        <div class="order-summary-box">
+          <strong>Your Order Items:</strong>
+          <ul id="modalItemList"></ul>
+          <div style="border-top: 1px dashed #d6c0c8; padding-top: 6px; display: flex; justify-content: space-between; font-weight: 700;">
+            <span>Total:</span>
+            <span id="modalTotal" style="color: var(--primary);">₹0</span>
+          </div>
+        </div>
+
+        <form id="orderForm" onsubmit="handlePlaceOrder(event)">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="custName" required placeholder="e.g. Aarti Sharma">
+          </div>
+
+          <div class="form-group">
+            <label>Mobile Number (WhatsApp) *</label>
+            <input type="tel" id="custPhone" required placeholder="e.g. 9876543210" pattern="[0-9]{10}">
+          </div>
+
+          <div class="form-group">
+            <label>Date of Birth (DOB) 🎂</label>
+            <input type="date" id="custDob" required>
+            <small style="color: #8c6873; font-size: 0.78rem;">Unlock birthday surprises & special seasonal bakery discounts!</small>
+          </div>
+
+          <div class="form-group">
+            <label>Delivery Address / Notes</label>
+            <textarea id="custNotes" rows="2" placeholder="Delivery time, landmark, customized instructions..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-order-btn">
+            <span>Send Order via WhatsApp</span> 📱
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ----------------------------------------------------
+    // Configuration: Replace with your Google Apps Script URL
+    // ----------------------------------------------------
+    const GOOGLE_APPS_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+    const WHATSAPP_LINK = "https://wa.me/message/743QZMFPNMQWC1";
+
+    // Products Data
+    const products = {
+      brownies: [
+        { id: "b1", name: "Classic Chocolate Brownie", price: 70, desc: "Rich, decadent cocoa baked with pure wholesome ingredients." },
+        { id: "b2", name: "Choco Chip Brownie", price: 80, desc: "Loaded with melting chocolate chips inside and on top." },
+        { id: "b3", name: "Choco Walnut Brownie", price: 85, desc: "Fudgy brownie studded with premium roasted walnuts." }
+      ],
+      muffins: [
+        { id: "m1", name: "Blueberry Muffin", price: 60, desc: "Bursting with juicy wild blueberries." },
+        { id: "m2", name: "Choco Chip Muffin", price: 60, desc: "Fluffy vanilla crumb packed with chocolate morsels." },
+        { id: "m3", name: "Marble Muffin", price: 60, desc: "Swirls of luscious vanilla and dark chocolate batter." },
+        { id: "m4", name: "Choco Walnut Muffin", price: 65, desc: "Topped with crunchy walnuts and rich cocoa." },
+        { id: "m5", name: "Double Chocolate Chip", price: 65, desc: "Intense dark chocolate batter with extra choco chips." },
+        { id: "m6", name: "Banana Walnut Muffin", price: 60, desc: "Naturally sweetened ripe banana and toasted walnuts." },
+        { id: "m7", name: "Banana Choco Chip", price: 60, desc: "Fresh banana bread flavor with rich chocolate chips." },
+        { id: "m8", name: "Pineapple Coconut", price: 60, desc: "Tropical shredded coconut and juicy pineapple bites." },
+        { id: "m9", name: "Tutti Frutti Muffin", price: 55, desc: "Classic bakery nostalgia filled with candied fruit gems." }
+      ],
+      teacakes: [
+        { id: "t1", name: "Classic Vanilla Tea Cake", price: 180, desc: "A tender, buttery loaf glazed gently for afternoon tea." },
+        { id: "t2", name: "Choco Chip Tea Cake", price: 200, desc: "Golden pound cake generous with studded chocolate chips." },
+        { id: "t3", name: "Marble Loaf Tea Cake", price: 210, desc: "Artisanal cocoa swirls folded into soft vanilla sponge." },
+        { id: "t4", name: "Banana Walnut Tea Cake", price: 220, desc: "Dense, aromatic spiced banana loaf topped with walnuts." }
+      ]
+    };
+
+    let cart = {};
+
+    function renderGrid(categoryId, items) {
+      const container = document.getElementById(categoryId);
+      container.innerHTML = items.map(item => `
+        <div class="product-card">
+          <div>
+            <div class="product-header">
+              <div class="product-title">${item.name}</div>
+              <div class="product-price">₹${item.price}</div>
+            </div>
+            <div class="product-desc">${item.desc}</div>
+          </div>
+          <button class="add-to-cart-btn" onclick="addToCart('${item.id}', '${item.name}', ${item.price})">
+            <span>+ Add to Order</span>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    renderGrid('brownies-grid', products.brownies);
+    renderGrid('muffins-grid', products.muffins);
+    renderGrid('teacakes-grid', products.teacakes);
+
+    function addToCart(id, name, price) {
+      if (cart[id]) {
+        cart[id].qty += 1;
+      } else {
+        cart[id] = { id, name, price, qty: 1 };
+      }
+      updateCartBar();
+    }
+
+    function updateCartBar() {
+      const items = Object.values(cart);
+      const totalQty = items.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = items.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const cartBar = document.getElementById('cartBar');
+
+      if (totalQty > 0) {
+        cartBar.classList.remove('hidden');
+        document.getElementById('cartCount').innerText = `${totalQty} item${totalQty > 1 ? 's' : ''} in cart`;
+        document.getElementById('cartTotal').innerText = `₹${totalPrice}`;
+      } else {
+        cartBar.classList.add('hidden');
+      }
+    }
+
+    function openCheckoutModal() {
+      const items = Object.values(cart);
+      if (items.length === 0) return;
+
+      const itemList = document.getElementById('modalItemList');
+      const totalPrice = items.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      itemList.innerHTML = items.map(item => `
+        <li>
+          <span>${item.qty}x ${item.name}</span>
+          <span>₹${item.price * item.qty}</span>
+        </li>
+      `).join('');
+
+      document.getElementById('modalTotal').innerText = `₹${totalPrice}`;
+      document.getElementById('checkoutModal').classList.add('active');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.remove('active');
+    }
+
+    async function handlePlaceOrder(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const dob = document.getElementById('custDob').value;
+      const notes = document.getElementById('custNotes').value.trim();
+
+      const items = Object.values(cart);
+      const itemsSummary = items.map(i => `${i.qty}x ${i.name}`).join(", ");
+      const grandTotal = items.reduce((acc, i) => acc + (i.price * i.qty), 0);
+
+      const payload = {
+        name: name,
+        phone: phone,
+        dob: dob,
+        items: itemsSummary,
+        total: grandTotal,
+        notes: notes
+      };
+
+      // 1. Asynchronously send payload to Google Sheets webhook
+      if (GOOGLE_APPS_SCRIPT_URL && GOOGLE_APPS_SCRIPT_URL !== "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE") {
+        try {
+          fetch(GOOGLE_APPS_SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+        } catch (err) {
+          console.warn("Background sheet sync failed:", err);
+        }
+      }
+
+      // 2. Open WhatsApp prefilled with order details
+      const waMessage = 
+        `*New Order - Whisk with Love* 🧁%0A%0A` +
+        `*Customer Name:* ${encodeURIComponent(name)}%0A` +
+        `*Mobile:* ${encodeURIComponent(phone)}%0A` +
+        `*Birthday (DOB):* ${encodeURIComponent(dob)}%0A` +
+        `*Items Ordered:* ${encodeURIComponent(itemsSummary)}%0A` +
+        `*Total Amount:* ₹${grandTotal}%0A` +
+        (notes ? `*Delivery / Notes:* ${encodeURIComponent(notes)}%0A` : "") +
+        `%0A_Sent via Whisk with Love online catalog._`;
+
+      window.open(`${WHATSAPP_LINK}?text=${waMessage}`, "_blank");
+      closeCheckoutModal();
+    }
+  </script>
+</body>
+</html>
